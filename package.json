@@ -110,7 +110,7 @@
     "postcss-nested-props": "^2.0.0",
     "precss": "^3.1.2",
     "prettier-eslint-cli": "^4.7.1",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.8.1",
     "react-addons-perf": "^15.4.2",
     "react-addons-test-utils": "^15.6.2",
     "react-hot-loader": "^3.1.3",
