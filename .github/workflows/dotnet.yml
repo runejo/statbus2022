@@ -32,9 +32,6 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
 
-    - name: Restore dependencies
-      run: dotnet restore nscreg.sln
-    - name: Build
-      run: dotnet build --no-restore nscreg.sln
-#    - name: Test
-#      run: dotnet test --no-build --verbosity normal
+    - run: dotnet restore nscreg.sln
+    - run: dotnet build --no-restore nscreg.sln
+#    - run: dotnet test --no-build --verbosity normal
