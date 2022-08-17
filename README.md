@@ -48,9 +48,12 @@ docker-compose up
 
 ### Notes
 * https://nodejs.org/en/about/releases/
+* https://nodejs.org/download/release/latest-v16.x/
 * https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core
 
 ```sh
 node -p "process.arch"
 x64                     #arm64 wil not work yet
 ```
+
+mcr.microsoft.com/mssql/server does not support Apple M1 (ARM64)
