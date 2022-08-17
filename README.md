@@ -52,5 +52,5 @@ docker-compose up
 
 ```sh
 node -p "process.arch"
-x64                     #arm64 wil not work yet
+x64                     # 'arm64' wil not work yet
 ```
