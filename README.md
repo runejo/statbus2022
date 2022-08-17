@@ -30,3 +30,27 @@ RDP
 192.168.1.23
 Administrator
 1234!@QW
+
+## 2022 Running a Development build
+
+Reqirements
+* Windows, Linux, Macos (Apple M1 is currently a problem)
+* Node.js 16
+* Docker Desktop
+
+```sh
+npm install
+npm run build
+cp appsettings.Development.json src/nscreg.Server
+docker-compose build
+docker-compose up
+```
+
+### Notes
+* https://nodejs.org/en/about/releases/
+* https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core
+
+```sh
+node -p "process.arch"
+x64                     #arm64 wil not work yet
+```
