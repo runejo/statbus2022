@@ -1,30 +1,46 @@
 version: '3.4'
 
 services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sql19-latest
+    ports:
+      - "1433:1433"
+    restart: always
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: 12qw!@QW
+      MSSQL_PID: Express
+      MSSQL_LCID: 1049
+      MSSQL_COLLATION: Cyrillic_General_CI_AS
+      user: ${CURRENT_UID}
+  #    volumes:
+  #      - /var/opt/mssql:/var/opt/mssql
+  #      - /backup:/backup
   nscreg.server:
     image: ${DOCKER_REGISTRY-}nscregserver
     build:
       context: .
       dockerfile: src/nscreg.Server/Dockerfile
     volumes:
-        - /docker/src/nscreg.Server/uploads:/app/uploads
-        - /docker/src/nscreg.Server/sampleframes:/app/sampleframes
+      - ./src/nscreg.Server/uploads:/app/uploads
+      - ./src/nscreg.Server/sampleframes:/app/sampleframes
 
   elasticsearch:
-   container_name: elasticsearch
-   image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
-   ports:
-    - 9200:9200
-   volumes:
-    - elasticsearch-data:/usr/share/elasticsearch/data
-   environment:
-    - xpack.monitoring.enabled=true
-    - xpack.watcher.enabled=false
-    - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-    - discovery.type=single-node
-   networks:
-    - elastic
-  
+    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
+    ports:
+      - 9200:9200
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    environment:
+      - xpack.monitoring.enabled=true
+      - xpack.watcher.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    networks:
+      - elastic
+
 networks:
   elastic:
     driver: bridge
