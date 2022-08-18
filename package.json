@@ -65,7 +65,7 @@
     "babel-loader": "^7.1.5",
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-module-resolver": "^3.1.1",
-    "babel-plugin-ramda": "^1.6.3",
+    "babel-plugin-ramda": "^2.1.1",
     "babel-plugin-transform-async-generator-functions": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-export-extensions": "^6.22.0",
