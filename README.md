@@ -1,3 +1,4 @@
+[![Node.js and .NET CI](https://github.com/runejo/statbus2022/actions/workflows/node.js.yml/badge.svg)](https://github.com/runejo/statbus2022/actions/workflows/node.js.yml)
 # nscreg-norway
 
 Statistical Business Registry (SBR)
