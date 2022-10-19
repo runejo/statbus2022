@@ -33,7 +33,7 @@
     "isomorphic-fetch": "^3.0.0",
     "lodash": "^4.17.5",
     "moment": "^2.20.1",
-    "node": "^8.11.4",
+    "node": "^19.0.0",
     "papaparse": "^5.2.0",
     "ramda": "^0.25.0",
     "react": "^16.8.4",
